@@ -78,9 +78,6 @@ tidy:
 test: tidy
 	@go test ./...
 
-remove-gitlab-token:
-	@unset GITLAB_TOKEN
-
 # --> patch
 
 bump-patch: test
@@ -102,10 +99,11 @@ commit-patch: bump-patch
 
 release-patch: commit-patch
 	@echo "$(blue-bold)Deployment (Patch)$(reset): \"$(yellow-bold)$(package)$(reset)\" - $(white-bold)$(version)$(reset)"
+	@unset GITLAB_TOKEN
 	@goreleaser release --clean
 	@echo "$(green-bold)Successful$(reset): $(version)"
 
-patch-release: remove-gitlab-token release-patch install
+patch-release: release-patch install
 
 # --> minor
 
@@ -128,10 +126,11 @@ commit-minor: bump-minor
 
 release-minor: commit-minor
 	@echo "$(blue-bold)Deployment (Minor)$(reset): \"$(yellow-bold)$(package)$(reset)\" - $(white-bold)$(version)$(reset)"
+	@unset GITLAB_TOKEN
 	@goreleaser release --clean
 	@echo "$(green-bold)Successful$(reset): $(version)"
 
-minor-release: remove-gitlab-token release-minor install
+minor-release: release-minor install
 
 # --> major
 
@@ -154,7 +153,8 @@ commit-major: bump-major
 
 release-major: commit-major
 	@echo "$(blue-bold)Deployment (Major)$(reset): \"$(yellow-bold)$(package)$(reset)\" - $(white-bold)$(version)$(reset)"
+	@unset GITLAB_TOKEN
 	@goreleaser release --clean
 	@echo "$(green-bold)Successful$(reset): $(version)"
 
-major-release: remove-gitlab-token release-major install
+major-release: release-major install
