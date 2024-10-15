@@ -4,6 +4,7 @@ go 1.22
 
 require (
 	github.com/spf13/cobra v1.8.0
+	github.com/spf13/pflag v1.0.5
 	golang.org/x/term v0.20.0
 	gopkg.in/yaml.v3 v3.0.1
 	sigs.k8s.io/kustomize/api v0.17.2
@@ -20,7 +21,6 @@ require (
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
-	github.com/spf13/pflag v1.0.5 // indirect
 	golang.org/x/sys v0.20.0 // indirect
 	google.golang.org/protobuf v1.34.1 // indirect
 	k8s.io/kube-openapi v0.0.0-20240521193020-835d969ad83a // indirect
