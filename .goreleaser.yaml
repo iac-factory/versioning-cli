@@ -47,7 +47,7 @@ brews:
 
         # url_template: "git@gitlab.com:ethrgg/templates/ethr-cli.git"
 
-        folder: Formula
+        directory: Formula
 
         commit_author:
             name: Jacob B. Sanders
