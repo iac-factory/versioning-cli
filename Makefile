@@ -68,9 +68,9 @@ dirty-contents 			= $(shell git diff --shortstat 2>/dev/null 2>/dev/null | tail 
 all :: patch-release
 
 install:
-	@brew tap x-ethr/homebrew-taps
-	@brew install ethr-cli --force
-	@brew update && brew upgrade ethr-cli
+	@brew tap iac-factory/homebrew-taps
+	@brew install versioning-cli --force
+	@brew update && brew upgrade versioning-cli
 
 tidy:
 	@go mod tidy && go mod vendor
