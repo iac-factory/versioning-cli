@@ -68,6 +68,7 @@ dirty-contents 			= $(shell git diff --shortstat 2>/dev/null 2>/dev/null | tail 
 all :: patch-release
 
 install:
+	@brew update
 	@brew tap iac-factory/homebrew-taps
 	@brew install versioning-cli --force
 	@brew update && brew upgrade versioning-cli
