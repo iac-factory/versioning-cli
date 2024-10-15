@@ -47,6 +47,8 @@ brews:
 
         # url_template: "git@gitlab.com:ethrgg/templates/ethr-cli.git"
 
+        folder: Formula
+
         commit_author:
             name: Jacob B. Sanders
             email: segmentational@gmail.com
