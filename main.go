@@ -27,8 +27,8 @@ var (
 func main() {
 	var root = &cobra.Command{
 		Use:                    constants.Name(),
-		Short:                  fmt.Sprintf("%s - A Development, Deployment & CI Utilities CLI", constants.Name()),
-		Long:                   fmt.Sprintf("%s is a tool that facilitates management of manifests, wraps CI capabilities relating to kubernetes, and overall provides local development assistance.", constants.Name()),
+		Short:                  fmt.Sprintf("%s - Versioning Utilities CLI", constants.Name()),
+		Long:                   fmt.Sprintf("%s is a tool that facilitates development-related versioning.", constants.Name()),
 		Example:                "",
 		ValidArgs:              nil,
 		ValidArgsFunction:      nil,
