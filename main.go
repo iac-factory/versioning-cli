@@ -48,6 +48,12 @@ func main() {
 				log.Default(l.String())
 			}
 
+			if e := os.Setenv("LOG_LEVEL", logging.String()); e != nil {
+				slog.Log(ctx, log.Error, "Unable to Set Log Level Environment Variable", slog.String("error", e.Error()))
+				e = fmt.Errorf("unable to set LOG_LEVEL environment variable: %w", e)
+				return e
+			}
+
 			slog.Log(ctx, log.Trace, "Root", slog.Group("command",
 				slog.String("name", cmd.Name()),
 				slog.String("version", version),
@@ -93,6 +99,7 @@ func main() {
 }
 
 func init() {
+
 	if e := os.Setenv("VERSION", version); e != nil {
 		exception := fmt.Errorf("unable to set VERSION: %w", e)
 
